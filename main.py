@@ -83,13 +83,23 @@ def cs_page():
 # likely serch
 
 def change_page():
-    match st.session_state["sel_page"]:
-        case "Airport Info":
-            ap_page()
-        case "Aircraft Info":
-            acft_page()
-        case "Aircraft Callsign":
-            cs_page()
+    # for python v3.10 or later
+    # match st.session_state["sel_page"]:
+    #     case "Airport Info":
+    #         ap_page()
+    #     case "Aircraft Info":
+    #         acft_page()
+    #     case "Aircraft Callsign":
+    #         cs_page()
+
+    # for python v3.9 or older
+    if st.session_state["sel_page"] == "Airport Info":
+        ap_page()
+    if st.session_state["sel_page"] == "Aircraft Info":
+        acft_page()
+    if st.session_state["sel_page"] == "Aircraft Callsign":
+        cs_page()
+
 
 
 # ////////////////////////////init////////////////////////////
